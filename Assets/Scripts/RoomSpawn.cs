@@ -24,7 +24,7 @@ public class RoomSpawn : MonoBehaviour
     private RoomTemplates templates;
     private bool spawned = false;
 
-    public float waitTime = 2f;
+    public float waitTime = 5f;
 
     void Start(){
         Destroy(gameObject, waitTime);
@@ -89,6 +89,7 @@ public class RoomSpawn : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D other){
+        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         if(other.CompareTag("RoomSpawner"))
         {
             if(other.GetComponent<RoomSpawn>().spawned == false && spawned == false){

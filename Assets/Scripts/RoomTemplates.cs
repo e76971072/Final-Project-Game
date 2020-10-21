@@ -13,7 +13,7 @@ public class RoomTemplates : MonoBehaviour
 
     public List<GameObject> rooms;
 
-    public float bufferTime = 2f;
+    public float bufferTime = 4f;
     private bool spawnEndRoom = true;
     public GameObject exit;
 
