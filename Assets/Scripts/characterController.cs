@@ -18,7 +18,8 @@ public class characterController : MonoBehaviour
 
     private bool facingRight = true; 
 
-    public GameObject bullet; 
+    public GameObject bullet;
+    public Transform firepoint; 
     Animator animator;
 
 
@@ -41,14 +42,18 @@ public class characterController : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
         }
-        else if (Input.GetKey("space"))
+        else if (Input.GetKeyDown("space"))
         {
             animator.SetBool("isAttack", true);
+            Shooting();
+
         }
 
-        else if (!Input.GetKey("space"))
+        else if (!Input.GetKeyDown("space"))
         {
             animator.SetBool("isAttack", false);
+            animator.SetBool("isWalking", false);
+
 
 
         }
@@ -63,17 +68,17 @@ public class characterController : MonoBehaviour
         //    Flip(); 
 
         //}
-        else
-        {
-            animator.SetBool("isWalking", false);
-        }
-
+       
 
     }
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); 
 
+    }
+    void Shooting ()
+    {
+        Instantiate(bullet, firepoint.position, firepoint.rotation); 
     }
     void Flip ()
     {
