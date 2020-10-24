@@ -1,21 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject vCam;
+    public GameObject camObj;
+    public CinemachineVirtualCamera vCam;
+    private Transform target;
+
     void OnTriggerEnter2D (Collider2D collider)
     {
         if(collider.CompareTag("Player") && !collider.isTrigger){
-            vCam.SetActive(true);
+            camObj.SetActive(true);
+            target = collider.transform;
+            vCam.Follow = target;
         }
     }
 
     void OnTriggerExit2D (Collider2D collider)
     {
         if(collider.CompareTag("Player") && !collider.isTrigger){
-            vCam.SetActive(false);
+            camObj.SetActive(false);
         }
     }
 }
