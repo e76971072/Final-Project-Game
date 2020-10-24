@@ -45,7 +45,7 @@ public class characterController : MonoBehaviour
         else if (Input.GetKeyDown("space"))
         {
             animator.SetBool("isAttack", true);
-            Shooting();
+            //Shooting();
 
         }
 
@@ -76,10 +76,10 @@ public class characterController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); 
 
     }
-    void Shooting ()
-    {
-        Instantiate(bullet, firepoint.position, firepoint.rotation); 
-    }
+    //void Shooting()
+    //{
+    //    Instantiate(bullet, firepoint.position, firepoint.rotation);
+    //}
     void Flip ()
     {
         transform.Rotate(0f, 180f, 0f); 
