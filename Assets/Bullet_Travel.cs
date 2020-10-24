@@ -9,7 +9,9 @@ public class Bullet_Travel : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public GameObject impactEffect; 
+    public GameObject impactEffect;
+
+    public Transform firepoint; 
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,15 @@ public class Bullet_Travel : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit some thing");
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag != "RoomTrigger")
+        {
+            Destroy(gameObject);
 
-        Destroy(gameObject);
+            Instantiate(impactEffect, transform.position, transform.rotation);
 
-        Instantiate(impactEffect, transform.position, transform.rotation); 
+        }
+
+       
     }
 }
