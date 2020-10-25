@@ -11,12 +11,12 @@ public class Bullet_Travel : MonoBehaviour
 
     public GameObject impactEffect;
 
+
     public Transform firepoint; 
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
-
 
     }
 
@@ -25,17 +25,37 @@ public class Bullet_Travel : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag != "RoomTrigger")
-        {
-            Destroy(gameObject);
+    //void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log(collision.gameObject.name);
+    //    Debug.Log(collision.gameObject.tag);
 
-            Instantiate(impactEffect, transform.position, transform.rotation);
+    //    if (collision.gameObject.tag != "RoomTrigger")
+    //    {
+    //        Destroy(gameObject);
+
+    //        Instantiate(impactEffect, transform.position, transform.rotation);
+
+    //    }
+
+
+    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        //gameObject.SendMessage("Got hit");
+
+        if (collision.gameObject.tag == "CameraControl" || collision.gameObject.tag == "RoomSpawner")
+        {
+            return; 
+
 
         }
 
-       
+        Debug.Log(collision.gameObject.tag);
+        Destroy(gameObject);
+
+        Instantiate(impactEffect, transform.position, transform.rotation); Destroy(gameObject);
+        Physics2D.IgnoreCollision(collision, collision);
     }
 }
