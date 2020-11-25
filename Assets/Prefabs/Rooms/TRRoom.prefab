@@ -95,7 +95,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7970015996654830124}
   - component: {fileID: 3224320310647894408}
-  - component: {fileID: -1003595305498275150}
   m_Layer: 0
   m_Name: TRRoom
   m_TagString: Untagged
@@ -137,32 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91308ab555b7b4db092d7f1b75932e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &-1003595305498275150
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2705030770479880645}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!61 &8171774314650454726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -675,6 +648,11 @@ PrefabInstance:
     - {fileID: 1438448165522013040, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
     - {fileID: 8773289932968476466, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
+--- !u!1 &6160933325488536732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244531786762906894, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
+  m_PrefabInstance: {fileID: 4955506772001640850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3342636824202743592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7684848901468053178, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
@@ -683,11 +661,6 @@ GameObject:
 --- !u!4 &6024864168308394445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1682623520920770655, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
-  m_PrefabInstance: {fileID: 4955506772001640850}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6160933325488536732 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1244531786762906894, guid: 3fd72ad890fa5344db0db3ab922df891, type: 3}
   m_PrefabInstance: {fileID: 4955506772001640850}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5687570814702328802
