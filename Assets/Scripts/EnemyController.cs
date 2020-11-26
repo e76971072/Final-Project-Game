@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float shootSpeed;
     [SerializeField] float speed;
     [SerializeField] int enemyType;
-    [SerializeField] float timer = 0f;
+    float timer = 0f;
 
     //Status of room, active enemy/dormant
     public bool status;
@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
                     }
                 case 2: //Chaser
                     {
-                        MoveToPlayer();
+                        Chaser();
                         break;
                     }
                 default:
@@ -75,8 +75,8 @@ public class EnemyController : MonoBehaviour
     //Actions
     void MoveToPlayer()
     {
-        transform.LookAt(target.transform.position);
-        transform.Rotate(new Vector3(0, -90, 0), Space.Self);
+        //transform.LookAt(target.transform.position);
+        //transform.Rotate(new Vector3(0, -90, 0), Space.Self);
         if (Vector2.Distance(transform.position, target.transform.position) > 1f)
         {
 
