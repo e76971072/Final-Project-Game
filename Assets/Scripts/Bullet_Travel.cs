@@ -45,7 +45,7 @@ public class Bullet_Travel : MonoBehaviour
 
         //gameObject.SendMessage("Got hit");
 
-        if (collision.gameObject.tag == "CameraControl" || collision.gameObject.tag == "RoomSpawner")
+        if (collision.gameObject.tag == "RoomTrigger" || collision.gameObject.tag == "RoomSpawner")
         {
             return; 
 
