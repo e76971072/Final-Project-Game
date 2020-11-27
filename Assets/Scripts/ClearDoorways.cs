@@ -15,10 +15,16 @@ public class ClearDoorways : MonoBehaviour
     {
         
     }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Wall")
         {
+            DestroyObject(gameObject);
+        }
+        else if( col.gameObject.tag == "ClosedRoom")
+        {
+            DestroyObject(col.gameObject);
             DestroyObject(gameObject);
         }
     }
