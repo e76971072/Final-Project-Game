@@ -28,6 +28,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health < 0)
+        {
+            Destroy(gameObject);
+        }
         //If enemy is active
         if(status)
         {
@@ -80,8 +84,22 @@ public class EnemyController : MonoBehaviour
         if (Vector2.Distance(transform.position, target.transform.position) > 1f)
         {
 
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        //Hit player
+        if(col.gameObject.tag == "Player")
+        {
+            //Damage player
+        }
+        //Bullet hit
+        else if(col.gameObject.tag == "Bullet")
+        {
+            //Take damage
+            health--;
         }
     }
 }
