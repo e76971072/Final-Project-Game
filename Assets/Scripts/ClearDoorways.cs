@@ -15,6 +15,7 @@ public class ClearDoorways : MonoBehaviour
     {
         
     }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Wall")
