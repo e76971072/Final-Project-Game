@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] int enemyType;
     float timer = 0f;
+    private SpriteRenderer spriteRenderer;
 
     //Status of room, active enemy/dormant
     public bool status;
@@ -23,12 +24,13 @@ public class EnemyController : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Player");
         }
+        this.spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(health < 0)
+        if(health < 1)
         {
             Destroy(gameObject);
         }
@@ -81,25 +83,15 @@ public class EnemyController : MonoBehaviour
     {
         //transform.LookAt(target.transform.position);
         //transform.Rotate(new Vector3(0, -90, 0), Space.Self);
+        this.spriteRenderer.flipX = target.transform.position.x < this.transform.position.x;
         if (Vector2.Distance(transform.position, target.transform.position) > 1f)
         {
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-
         }
     }
-    void OnTriggerEnter2D(Collider2D col)
+    public void DamageEnemy(int value)
     {
-        //Hit player
-        if(col.gameObject.tag == "Player")
-        {
-            //Damage player
-        }
-        //Bullet hit
-        else if(col.gameObject.tag == "Bullet")
-        {
-            //Take damage
-            health--;
-        }
+        health -= value;
     }
 }

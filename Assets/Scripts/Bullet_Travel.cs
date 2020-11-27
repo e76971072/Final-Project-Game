@@ -51,6 +51,11 @@ public class Bullet_Travel : MonoBehaviour
 
 
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.GetComponent<EnemyController>().DamageEnemy(1);
+        }
+
 
         Debug.Log(collision.gameObject.tag);
         Destroy(gameObject);
