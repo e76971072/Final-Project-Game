@@ -21,5 +21,10 @@ public class ClearDoorways : MonoBehaviour
         {
             DestroyObject(gameObject);
         }
+        else if( col.gameObject.tag == "ClosedRoom")
+        {
+            DestroyObject(col.gameObject);
+            DestroyObject(gameObject);
+        }
     }
 }
