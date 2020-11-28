@@ -6,13 +6,17 @@ public class RoomController : MonoBehaviour
 {
     //List of enemies
     public GameObject[] enemies;
+    public GameObject[] doors;
     public bool active = false;
     public bool newRoom = true;
 
+    public GameController manager;
+
+    public int customEnemySpawn = -1;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Awake(){
+        manager = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -21,8 +25,32 @@ public class RoomController : MonoBehaviour
         if(active && newRoom)
         {
             newRoom = false;
-            //For loop of how many enemies
-            SpawnEnemies();
+
+            int spawnNum = manager.enemyMaxPerRoom;
+            if(customEnemySpawn > -1)
+                spawnNum = customEnemySpawn;
+
+
+            for (int i = 0; i < spawnNum; i++)
+            {
+                manager.enemyCnt++;
+                SpawnEnemies();
+            }
+        }
+
+        if(active){
+            for (int i = 0; i < doors.Length; i++)
+            {
+                doors[i].SetActive(true);
+            }
+        }
+
+        if(active && manager.enemyCnt <= 0){
+            active = false;
+            for (int i = 0; i < doors.Length; i++)
+            {
+                doors[i].SetActive(false);
+            }
         }
     }
     private void SpawnEnemies()
@@ -37,14 +65,9 @@ public class RoomController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            active = true;
+            if(newRoom)
+                active = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            active = false;
-        }
-    }
+
 }
