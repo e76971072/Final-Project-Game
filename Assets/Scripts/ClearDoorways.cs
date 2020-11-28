@@ -20,12 +20,12 @@ public class ClearDoorways : MonoBehaviour
     {
         if (col.gameObject.tag == "Wall")
         {
-            DestroyObject(gameObject);
+            Destroy(gameObject);
         }
-        else if( col.gameObject.tag == "ClosedRoom")
+        else if(col.gameObject.tag == "ClosedRoom")
         {
-            DestroyObject(col.gameObject);
-            DestroyObject(gameObject);
+            Destroy(col.gameObject);
+            Destroy(gameObject);
         }
     }
 }

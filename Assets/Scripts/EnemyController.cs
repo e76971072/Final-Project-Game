@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
         //transform.LookAt(target.transform.position);
         //transform.Rotate(new Vector3(0, -90, 0), Space.Self);
         this.spriteRenderer.flipX = target.transform.position.x < this.transform.position.x;
-        if (Vector2.Distance(transform.position, target.transform.position) > 1f)
+        if (Vector2.Distance(transform.position, target.transform.position) > 1.5f)
         {
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
