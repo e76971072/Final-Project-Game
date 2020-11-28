@@ -1,9 +1,20 @@
 # Into the Unlit
-## Summary
-Into the Unlit is a rogue-like game which progressively increases in difficulty as you play. With different upgrades, attacks, everchanging terrain between levels and varying enemies, this is a game that will keep you on your toes and wanting more after every death!
+## Summary 📝 
+
+**Into the Unlit** is a rogue-like game which progressively increases in difficulty as you play. With different upgrades, attacks, everchanging terrain between levels and varying enemies, this is a game that will keep you on your toes and wanting more after every death!
+
 ## How to Play
 Using WASD for movement and their cursor to shoot, the player will navigate through levels obtaining different upgrades to help defeat enemies with a variety of different attacks while avoiding traps.
-## Installation
-To run, download the GitHub zipfile or clone the repository.
-## Tools used to develop:
-Unity
+
+## Installation 🛠 🧑‍💻 
+
+👯 ` git clone  https://github.com/e76971072/Final-Project-Game.git`
+
+🔗  **Fork** the repository
+
+ ## Tools used to develop 🛠
+ **Unity 2020.1.14**
+
+## Team:
+
+![](https://cdn.discordapp.com/attachments/749734727677902898/781705314101231666/LogoRender.png)
