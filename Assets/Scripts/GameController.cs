@@ -10,6 +10,9 @@ public class GameController : MonoBehaviour
     public int health = 10;
     public int level = 1;
 
+    public int enemyMaxPerRoom = 3;
+    public int enemyCnt = 0;
+
     void Start()
     {
          if(PlayerPrefs.HasKey("PlayerHealth"))

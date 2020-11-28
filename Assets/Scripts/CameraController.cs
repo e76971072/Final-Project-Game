@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
             camObj.SetActive(true);
             target = collider.transform;
             vCam.Follow = target;
-            vCam.m_Lens.OrthographicSize = 2.5f;
+            vCam.m_Lens.OrthographicSize = 3f;
         }
     }
 

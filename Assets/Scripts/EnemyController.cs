@@ -11,15 +11,22 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float shootSpeed;
     [SerializeField] float speed;
     [SerializeField] int enemyType;
+
+    public GameController manager;
     float timer = 0f;
     private SpriteRenderer spriteRenderer;
 
     //Status of room, active enemy/dormant
     public bool status;
 
+    void Awake(){
+        manager = GameObject.Find("GameController").GetComponent<GameController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         if(!target)
         {
             target = GameObject.FindGameObjectWithTag("Player");
@@ -32,7 +39,7 @@ public class EnemyController : MonoBehaviour
     {
         if(health < 1)
         {
-            Destroy(gameObject);
+            Die();
         }
         //If enemy is active
         if(status)
@@ -93,5 +100,10 @@ public class EnemyController : MonoBehaviour
     public void DamageEnemy(int value)
     {
         health -= value;
+    }
+
+    void Die(){
+        manager.enemyCnt--;
+        Destroy(gameObject);
     }
 }
