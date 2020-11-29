@@ -100,6 +100,17 @@ public class EnemyController : MonoBehaviour
     public void DamageEnemy(int value)
     {
         health -= value;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ( collision.tag == "Player" )
+        {
+            Debug.Log("Collide with enemy"); 
+            HealthBar.healthCount -= 0.2f; 
+          
+        }
     }
 
     void Die(){
