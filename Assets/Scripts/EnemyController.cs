@@ -109,24 +109,25 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        //if (col.gameObject.CompareTag("Player"))                   most likely not needed
-        switch (enemyType)
-        {
-            case 1: //Shooter
+        if (col.gameObject.CompareTag("Player"))   {
+            switch (enemyType)
             {
-                manager.health -= 2;
-                Debug.Log(manager.health);
-                break;
-             }
-            case 2: //Chaser
-            {
-                manager.health -= 1;
-                Debug.Log(manager.health);
-                break;
-            }
-            default:
-            {
-                break;
+                case 1: //Shooter
+                {
+                    manager.health -= 2;
+                    Debug.Log(manager.health);
+                    break;
+                 }
+                case 2: //Chaser
+                {
+                    manager.health -= 1;
+                    Debug.Log(manager.health);
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
             }
         }
     }
