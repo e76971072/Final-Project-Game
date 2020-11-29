@@ -1229,6 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba18fa816de164b97a6866e996d5509b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: {fileID: 0}
   maxHealth: 10
   manager: {fileID: 0}
 --- !u!212 &617167374
@@ -2417,7 +2418,7 @@ GameObject:
   - component: {fileID: 1956379620}
   - component: {fileID: 1956379621}
   m_Layer: 0
-  m_Name: _ealthBar
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
