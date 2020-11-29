@@ -120,7 +120,7 @@ public class EnemyController : MonoBehaviour
              }
             case 2: //Chaser
             {
-                manager.health -= 3;
+                manager.health -= 1;
                 Debug.Log(manager.health);
                 break;
             }
