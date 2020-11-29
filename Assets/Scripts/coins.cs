@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class coins : MonoBehaviour
 {
+
+
+    [SerializeField] int coinReward = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +25,7 @@ public class coins : MonoBehaviour
         if ( collision.tag == "Player")
         {
             Destroy(gameObject);
-            HealthBar.healthCount -= (int)0.2f;
+            //HealthBar.healthCount -= (int)0.2f;
 
         }
     }
