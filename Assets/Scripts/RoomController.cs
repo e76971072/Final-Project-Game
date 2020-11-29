@@ -50,7 +50,8 @@ public class RoomController : MonoBehaviour
             active = false;
             for (int i = 0; i < doors.Length; i++)
             {
-                doors[i].SetActive(false);
+                if(doors[i])
+                    doors[i].SetActive(false);
             }
         }
     }
