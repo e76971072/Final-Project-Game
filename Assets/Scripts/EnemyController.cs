@@ -100,34 +100,21 @@ public class EnemyController : MonoBehaviour
     public void DamageEnemy(int value)
     {
         health -= value;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ( collision.tag == "Player" )
+        {
+            Debug.Log("collide with enemies");
+            HealthBar.healthCount -= 0.05f; 
+          
+        }
     }
 
     void Die(){
         manager.enemyCnt--;
         Destroy(gameObject);
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        //if (col.gameObject.CompareTag("Player"))                   most likely not needed
-        switch (enemyType)
-        {
-            case 1: //Shooter
-            {
-                manager.health -= 2;
-                Debug.Log(manager.health);
-                break;
-             }
-            case 2: //Chaser
-            {
-                manager.health -= 3;
-                Debug.Log(manager.health);
-                break;
-            }
-            default:
-            {
-                break;
-            }
-        }
     }
 }

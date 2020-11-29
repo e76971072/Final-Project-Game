@@ -21,8 +21,7 @@ public class coins : MonoBehaviour
         if ( collision.tag == "Player")
         {
             Destroy(gameObject);
-            HealthBar.coolingDown = true; 
-
+            HealthBar.healthCount -= (int)0.2f;
 
         }
     }

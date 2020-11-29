@@ -5,6 +5,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class characterController : MonoBehaviour
 {
@@ -58,19 +60,28 @@ public class characterController : MonoBehaviour
 
         }
 
+        else if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene(0);
 
-        //if ( move <0 && facingRight)
-        //{
-        //    Flip(); 
-        //}
-        //else if (move > 0 && !facingRight)
-        //{
-        //    Flip(); 
+        }
 
-        //}
-       
 
     }
+
+
+    //if ( move <0 && facingRight)
+    //{
+    //    Flip(); 
+    //}
+    //else if (move > 0 && !facingRight)
+    //{
+    //    Flip(); 
+
+    //}
+
+
+
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); 
@@ -84,6 +95,9 @@ public class characterController : MonoBehaviour
     {
         transform.Rotate(0f, 180f, 0f); 
     }
+
+
+  
 
 
     //private void OnTriggerEnter2D(Collider2D collision)
