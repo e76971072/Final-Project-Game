@@ -9,12 +9,27 @@ public class GameController : MonoBehaviour
     //Variables
     public int health = 10;
     public int level = 1;
+    public bool gameRunning;
 
     public int enemyMaxPerRoom = 3;
     public int enemyCnt = 0;
 
+    public void TakeDamage(int D) {
+        health -= D;
+        if(health <= 0) {
+            GameOver();
+        }
+        health = Mathf.Max(health, 0);
+    }
+
+    public void RestoreHealth(int D) {
+        health += D;
+        health = Mathf.Min(health, 10);
+    }
+
     void Start()
     {
+        gameRunning = true;
          if(PlayerPrefs.HasKey("PlayerHealth"))
         {
             health = PlayerPrefs.GetInt("PlayerHealth");
@@ -36,8 +51,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && gameRunning)
         {
+            gameRunning = false;
             GameOver();
         }
     }
