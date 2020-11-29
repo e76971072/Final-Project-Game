@@ -24,8 +24,9 @@ public class coins : MonoBehaviour
 
         if ( collision.tag == "Player")
         {
+            // HealthBar.restoreHealth(0.2f); // TODO: We should have a good api to restore/damage
+            GameObject.Find("GameController").GetComponent<GameController>().RestoreHealth(2);
             Destroy(gameObject);
-            //HealthBar.healthCount -= (int)0.2f;
 
         }
     }

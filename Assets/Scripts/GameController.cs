@@ -13,6 +13,19 @@ public class GameController : MonoBehaviour
     public int enemyMaxPerRoom = 3;
     public int enemyCnt = 0;
 
+    public void TakeDamage(int D) {
+        health -= D;
+        if(health <= 0) {
+            GameOver();
+        }
+        health = Mathf.Max(health, 0);
+    }
+
+    public void RestoreHealth(int D) {
+        health += D;
+        health = Mathf.Min(health, 10);
+    }
+
     void Start()
     {
          if(PlayerPrefs.HasKey("PlayerHealth"))
