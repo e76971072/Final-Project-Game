@@ -5,26 +5,18 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private Image barImage;
-    private void Awake()
-    {
-        barImage = transform.Find("HPBar").GetComponent<Image>();
-    }
-
-    public void SetHealth(float healthNormalized)
-    {
-        barImage.fillAmount = healthNormalized;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public  Image cooldown;
+    public static bool coolingDown;
+    public static float waitTime = 30.0f;
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        if (coolingDown == true)
+        {
+            //Reduce fill amount over 30 seconds
+            cooldown.fillAmount = 1; 
 
+        }
     }
 }
