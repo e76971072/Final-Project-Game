@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
         Debug.Log("GameOver!!");
 
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex  - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex  + 1);
 
     }
 
