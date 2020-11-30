@@ -54,6 +54,8 @@ public class GameController : MonoBehaviour
         if (health <= 0 && gameRunning)
         {
             gameRunning = false;
+            PlayerPrefs.DeleteKey("PlayerHealth");
+            PlayerPrefs.DeleteKey("CurrentLevel");
             GameOver();
         }
     }
