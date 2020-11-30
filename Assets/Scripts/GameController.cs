@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
             GameOver();
         }
     }
-    private void ChangeLevel()
+    public void ChangeLevel()
     {
         PlayerPrefs.SetInt("PlayerHealth", health);
         PlayerPrefs.SetInt("CurrentLevel", level + 1);

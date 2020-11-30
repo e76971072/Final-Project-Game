@@ -18,8 +18,8 @@ public class RoomSpawn : MonoBehaviour
         0: No Limit
         5: Minimum max room
     */
-    public static int maxRooms = 20;
-    public static int totalRooms = 1;
+    public int maxRooms = 20;
+    public int totalRooms = 1;
     private int rand;
     private RoomTemplates templates;
     private bool spawned = false;
