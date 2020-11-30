@@ -15,7 +15,7 @@ public class characterController : MonoBehaviour
     public float moveSpeed = 10f;
     public Rigidbody2D rb;
     Vector2 movement;
-
+    public AudioSource audioData;
 
 
     private bool facingRight = true; 
@@ -32,6 +32,7 @@ public class characterController : MonoBehaviour
     {
 
         animator = GetComponent<Animator>();
+        audioData = GetComponent<AudioSource>(); 
     }
 
     void Update()
@@ -47,6 +48,7 @@ public class characterController : MonoBehaviour
         else if (Input.GetKeyDown("space"))
         {
             animator.SetBool("isAttack", true);
+            audioData.Play(); 
             //Shooting();
 
         }
@@ -62,7 +64,7 @@ public class characterController : MonoBehaviour
 
         else if (Input.GetKeyDown("escape"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
 
         }
 

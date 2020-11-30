@@ -110,13 +110,14 @@ public class EnemyController : MonoBehaviour
             {
                 case 1: //Shooter
                 {
-                    manager.health -= 2;
+                    manager.health -= 1;
                     Debug.Log(manager.health);
+                        
                     break;
                  }
                 case 2: //Chaser
                 {
-                    manager.health -= 1;
+                    manager.health -= 2;
                     Debug.Log(manager.health);
                     break;
                 }

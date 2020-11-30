@@ -10,7 +10,7 @@ public class healthbar : MonoBehaviour
     public static float waitTime = 30.0f;
     internal static float healthCount = 1;
 
-    public float maxHealth = 10;
+    public float maxHealth = 30;
     private float originalScale;
     public GameController manager;
 

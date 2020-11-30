@@ -24,8 +24,16 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
+   
     public void quit()
     {
         Application.Quit(); 
+    }
+    public void resume()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+
+        SceneManager.LoadScene(currentSceneIndex - 1);
     }
 }

@@ -66,12 +66,10 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GameOver!!");
-        //Solution to game over
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex  - 1);
+
     }
 
     private void OnApplicationQuit()
