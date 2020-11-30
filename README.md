@@ -8,6 +8,15 @@
 ## How to Play
 Using WASD for movement and their cursor to shoot, the player will navigate through levels obtaining different upgrades to help defeat enemies with a variety of different attacks while avoiding traps.
 
+## Movement
+
+- **W** or **↑**: 
+- **A** or **←**: 
+- **D** or **→**: 
+- **S** or **↓**: 
+- **Spacebar**: Attack
+- **Esc**: Escape 
+
 ## Installation 🛠 🧑‍💻 
 
 👯 ` git clone  https://github.com/e76971072/Final-Project-Game.git`
